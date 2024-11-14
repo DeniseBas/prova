@@ -63,8 +63,8 @@ nav ul li a:hover {
 
 /* Sezione Introduttiva */
 .intro {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   background-color: #f4f4f4;
   position: absolute;
   top: 50%;
