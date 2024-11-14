@@ -30,7 +30,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: #555;
+  background-color: #000000;
 }
 
 /* Split Screen */
@@ -48,32 +48,32 @@ nav ul li a:hover {
   justify-content: center;
   align-items: center;
   position: relative; /* Imposta posizione relativa per gestire z-index */
-  background-color: #4CAF50; /* Colore verde per sinistra e blu per destra */
   z-index: 1; /* Mantieni un z-index inferiore rispetto alla sezione centrale */
 }
 
+/* Blocco sinistro con testo nero */
 .split-screen .left {
   background-color: #F5F5F5; /* Colore White Smoke */
-  color: #000000;
+  color: #000000; /* Colore nero per il testo */
 }
 
-/* Stile per il testo specifico nel blocco sinistro */
+/* Assicura che il testo specifico sia nero nel blocco sinistro */
 .split-screen .left h1,
 .split-screen .left p,
 .split-screen .left a {
-  color: #000000; /* Forza il colore nero per tutti i testi specifici */
+  color: #000000; /* Colore nero per titoli, paragrafi e link nel blocco sinistro */
 }
 
-
+/* Blocco destro con testo bianco */
 .split-screen .right {
   background-color: #000000; /* Colore Nero */
-  color: #F5F5F5;
+  color: #F5F5F5; /* Colore bianco per il testo */
 }
 
 /* Sezione Introduttiva */
 .intro {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   background-color: #f4f4f4;
   position: absolute;
   top: 50%;
@@ -91,6 +91,7 @@ nav ul li a:hover {
   justify-content: center; /* Centra verticalmente */
   align-items: center; /* Centra orizzontalmente */
 }
+
 .intro h1 {
   font-size: 1.8rem;
   color: #333;
@@ -105,8 +106,17 @@ nav ul li a:hover {
 /* Aggiungi stile per i link dentro i blocchi */
 .split-screen a {
   text-decoration: none;
-  color: white;
   text-align: center;
+}
+
+/* Stile specifico per il link nel blocco destro */
+.split-screen .right a {
+  color: #F5F5F5; /* Colore bianco per i link nel blocco destro */
+}
+
+/* Stile specifico per il link nel blocco sinistro */
+.split-screen .left a {
+  color: #000000; /* Colore nero per i link nel blocco sinistro */
 }
 
 .split-screen a:hover {
