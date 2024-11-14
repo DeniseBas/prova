@@ -38,6 +38,7 @@ nav ul li a:hover {
 .split-screen {
   display: flex;
   height: 100vh; /* Occupare l'intera altezza della finestra */
+  position: relative; /* Necessario per il posizionamento della sezione introduttiva */
 }
 
 .split-screen .left, .split-screen .right {
@@ -58,22 +59,29 @@ nav ul li a:hover {
   background-color: #2196F3; /* Colore blu */
 }
 
-/* Sezione Introduttiva per il titolo e testo tra i blocchi */
+/* Sezione Introduttiva più piccola centrata tra i blocchi */
 .intro {
-  flex: 0 0 100%; /* Fa sì che la sezione intro occupi tutta la larghezza */
+  width: 300px; /* Imposta una larghezza fissa per il quadrato */
+  height: 300px; /* Imposta un'altezza uguale per creare un quadrato */
   background-color: #f4f4f4; /* Colore di sfondo chiaro */
+  position: absolute; /* Posiziona la sezione in modo assoluto */
+  top: 50%; /* Centra la sezione verticalmente */
+  left: 50%; /* Centra la sezione orizzontalmente */
+  transform: translate(-50%, -50%); /* Usato per centrare perfettamente */
   text-align: center;
-  padding: 50px 20px;
+  padding: 20px;
+  border-radius: 10px; /* Rende gli angoli arrotondati */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Aggiungi ombra per dare risalto */
 }
 
 .intro h1 {
-  font-size: 3rem;
+  font-size: 1.8rem;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .intro p {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #666;
 }
 
