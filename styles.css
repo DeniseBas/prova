@@ -49,9 +49,8 @@ nav ul li a:hover {
   align-items: center;
   color: white;
   position: relative; /* Imposta posizione relativa per gestire z-index */
-  z-index: 1; /* Imposta un z-index inferiore rispetto alla sezione centrale */
-  transition: transform 0s; /* Rimuovi transizione di ingrandimento */
-  pointer-events: auto; /* Consente l'interazione normale con il mouse */
+  background-color: #4CAF50; /* Colore verde per sinistra e blu per destra */
+  z-index: 1; /* Mantieni un z-index inferiore rispetto alla sezione centrale */
 }
 
 .split-screen .left {
@@ -62,21 +61,20 @@ nav ul li a:hover {
   background-color: #2196F3; /* Colore blu */
 }
 
-/* Sezione Introduttiva più piccola centrata tra i blocchi */
+/* Sezione Introduttiva */
 .intro {
-  width: 300px; /* Imposta una larghezza fissa per il quadrato */
-  height: 300px; /* Imposta un'altezza uguale per creare un quadrato */
-  background-color: #f4f4f4; /* Colore di sfondo chiaro */
-  position: absolute; /* Posiziona la sezione in modo assoluto */
-  top: 50%; /* Centra la sezione verticalmente */
-  left: 50%; /* Centra la sezione orizzontalmente */
-  transform: translate(-50%, -50%); /* Usato per centrare perfettamente */
+  width: 300px;
+  height: 300px;
+  background-color: #f4f4f4; 
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
   text-align: center;
   padding: 20px;
-  border-radius: 10px; /* Rende gli angoli arrotondati */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Aggiungi ombra per dare risalto */
-  z-index: 2; /* Imposta un z-index più alto per mantenerlo sopra gli altri blocchi */
-  pointer-events: none; /* Blocca l'interazione del mouse con il blocco centrale */
+  border-radius: 10px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  z-index: 2; /* Il più alto, per garantirne la visibilità sopra i blocchi laterali */
 }
 
 .intro h1 {
@@ -98,30 +96,12 @@ nav ul li a:hover {
 }
 
 .split-screen a:hover {
-  opacity: 0.8; /* Riduci opacità per effetto hover */
+  opacity: 0.8;
 }
 
-/* Non espandere i blocchi laterali quando il mouse passa sopra */
+/* Rimuovi trasformazioni e transizioni */
 .split-screen .left:hover,
 .split-screen .right:hover {
-  transform: none; /* Rimuove l'effetto di ingrandimento */
-  z-index: 1; /* Mantieni il z-index invariato */
-  pointer-events: auto; /* Consenti l'interazione del mouse */
-}
-
-/* Stile per titoli e testo nei blocchi */
-h1 {
-  font-size: 2.5rem;
-}
-
-p {
-  font-size: 1.2rem;
-}
-
-/* Rimuovi la transizione del movimento del testo */
-.split-screen .left h1,
-.split-screen .right h1,
-.split-screen .left p,
-.split-screen .right p {
-  transform: none; /* Rimuove l'effetto di movimento */
+  z-index: 1; /* Assicura che il blocco centrale rimanga sempre sopra */
+  transform: none; /* Nessuna trasformazione */
 }
