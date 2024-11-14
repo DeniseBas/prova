@@ -34,6 +34,24 @@ nav ul li a:hover {
   background-color: #555;
 }
 
+/* Sezione Introduttiva per titolo e testo */
+.intro {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f4f4f4; /* Colore di sfondo chiaro */
+}
+
+.intro h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.intro p {
+  font-size: 1.5rem;
+  color: #666;
+}
+
 /* Split Screen */
 .split-screen {
   display: flex;
