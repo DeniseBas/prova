@@ -40,7 +40,7 @@ nav ul li a:hover {
   position: relative; /* Necessario per il posizionamento della sezione introduttiva */
 }
 
-/* Senza transizioni, senza effetto hover su espansione */
+/* Impostazioni generali per i blocchi laterali */
 .split-screen .left, .split-screen .right {
   flex: 1; /* Occupa metà della larghezza ciascuno */
   padding: 20px;
@@ -50,6 +50,8 @@ nav ul li a:hover {
   color: white;
   position: relative; /* Imposta posizione relativa per gestire z-index */
   z-index: 1; /* Imposta un z-index inferiore rispetto alla sezione centrale */
+  transition: transform 0s; /* Rimuovi transizione di ingrandimento */
+  pointer-events: auto; /* Consente l'interazione normale con il mouse */
 }
 
 .split-screen .left {
@@ -74,6 +76,7 @@ nav ul li a:hover {
   border-radius: 10px; /* Rende gli angoli arrotondati */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Aggiungi ombra per dare risalto */
   z-index: 2; /* Imposta un z-index più alto per mantenerlo sopra gli altri blocchi */
+  pointer-events: none; /* Blocca l'interazione del mouse con il blocco centrale */
 }
 
 .intro h1 {
@@ -98,11 +101,12 @@ nav ul li a:hover {
   opacity: 0.8; /* Riduci opacità per effetto hover */
 }
 
-/* Rimuovere la transizione di ingrandimento per i blocchi laterali */
+/* Non espandere i blocchi laterali quando il mouse passa sopra */
 .split-screen .left:hover,
 .split-screen .right:hover {
-  transform: none; /* Rimuove l'effetto di espansione */
-  z-index: 2; /* Mantiene il z-index invariato */
+  transform: none; /* Rimuove l'effetto di ingrandimento */
+  z-index: 1; /* Mantieni il z-index invariato */
+  pointer-events: auto; /* Consenti l'interazione del mouse */
 }
 
 /* Stile per titoli e testo nei blocchi */
