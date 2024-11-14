@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitano Ulisse Digital Edition</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Container for Split Screen -->
+    <div class="split-container">
+        <!-- Left Side (Dynamic content) -->
+        <div class="left-side">
+            <div class="logo" id="logo">
+                <h1>Logo 1</h1>
+            </div>
+            <div class="content">
+                <h2>Performance</h2>
+                <p>Explore the staging of Capitano Ulisse</p>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="divider" id="divider"></div>
+
+        <!-- Right Side (Dynamic content) -->
+        <div class="right-side">
+            <div class="logo" id="logo-right">
+                <h1>Logo 2</h1>
+            </div>
+            <div class="content">
+                <h2>Text</h2>
+                <p>Explore the textual variants of Capitano Ulisse</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript in-line -->
+    <script>
+        // Get references to the divider and the sides
+        const divider = document.getElementById('divider');
+        const leftSide = document.querySelector('.left-side');
+        const rightSide = document.querySelector('.right-side');
+        const logo = document.getElementById('logo');
+        const logoRight = document.getElementById('logo-right');
+
+        // Store the initial mouse position
+        let isResizing = false;
+
+        divider.addEventListener('mousedown', (e) => {
+            isResizing = true;
+
+            document.addEventListener('mousemove', handleMouseMove);
+            document.addEventListener('mouseup', () => {
+                isResizing = false;
+                document.removeEventListener('mousemove', handleMouseMove);
+            });
+        });
+
+        function handleMouseMove(e) {
+            if (isResizing) {
+                // Calculate new width for left side
+                const leftWidth = e.clientX;
+
+                // Set the width of the left side and right side
+                leftSide.style.width = `${leftWidth}px`;
+                rightSide.style.width = `calc(100vw - ${leftWidth}px)`;
+
+                // Change logo visibility based on side expanded
+                if (leftWidth < window.innerWidth / 2) {
+                    logo.style.opacity = '1';
+                    logoRight.style.opacity = '0';
+                } else {
+                    logo.style.opacity = '0';
+                    logoRight.style.opacity = '1';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
