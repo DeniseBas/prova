@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capitano Ulisse Digital Edition</title>
+    <title>Split Screen Design</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,8 +15,8 @@
                 <h1>Logo 1</h1>
             </div>
             <div class="content">
-                <h2>Performance</h2>
-                <p>Explore the staging of Capitano Ulisse</p>
+                <h2>Welcome to the Left Side</h2>
+                <p>This side of the screen features some amazing content.</p>
             </div>
         </div>
 
@@ -29,8 +29,8 @@
                 <h1>Logo 2</h1>
             </div>
             <div class="content">
-                <h2>Text</h2>
-                <p>Explore the textual variants of Capitano Ulisse</p>
+                <h2>Welcome to the Right Side</h2>
+                <p>Here is where we display more information on the right.</p>
             </div>
         </div>
     </div>
@@ -44,12 +44,14 @@
         const logo = document.getElementById('logo');
         const logoRight = document.getElementById('logo-right');
 
-        // Store the initial mouse position
         let isResizing = false;
 
         divider.addEventListener('mousedown', (e) => {
             isResizing = true;
+            // Prevent the default dragging behavior
+            e.preventDefault();
 
+            // Add mousemove and mouseup event listeners
             document.addEventListener('mousemove', handleMouseMove);
             document.addEventListener('mouseup', () => {
                 isResizing = false;
@@ -59,20 +61,22 @@
 
         function handleMouseMove(e) {
             if (isResizing) {
-                // Calculate new width for left side
-                const leftWidth = e.clientX;
+                // Calculate the new width of the left side
+                const newLeftWidth = e.clientX;
 
-                // Set the width of the left side and right side
-                leftSide.style.width = `${leftWidth}px`;
-                rightSide.style.width = `calc(100vw - ${leftWidth}px)`;
+                // Ensure the width doesn't go below a minimum or exceed the window width
+                if (newLeftWidth > 100 && newLeftWidth < window.innerWidth - 100) {
+                    leftSide.style.width = `${newLeftWidth}px`;
+                    rightSide.style.width = `calc(100vw - ${newLeftWidth}px)`;
 
-                // Change logo visibility based on side expanded
-                if (leftWidth < window.innerWidth / 2) {
-                    logo.style.opacity = '1';
-                    logoRight.style.opacity = '0';
-                } else {
-                    logo.style.opacity = '0';
-                    logoRight.style.opacity = '1';
+                    // Change logo visibility based on side expanded
+                    if (newLeftWidth < window.innerWidth / 2) {
+                        logo.style.opacity = '1';
+                        logoRight.style.opacity = '0';
+                    } else {
+                        logo.style.opacity = '0';
+                        logoRight.style.opacity = '1';
+                    }
                 }
             }
         }
