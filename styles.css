@@ -41,6 +41,7 @@ nav ul li a:hover {
   position: relative; /* Necessario per il posizionamento della sezione introduttiva */
 }
 
+/* Aggiungi z-index per i blocchi laterali */
 .split-screen .left, .split-screen .right {
   flex: 1; /* Occupa metà della larghezza ciascuno */
   padding: 20px;
@@ -49,6 +50,8 @@ nav ul li a:hover {
   align-items: center;
   color: white;
   transition: transform 0.3s ease-in-out; /* Transizione per l'espansione */
+  position: relative; /* Imposta posizione relativa per gestire z-index */
+  z-index: 1; /* Imposta un z-index inferiore rispetto alla sezione centrale */
 }
 
 .split-screen .left {
@@ -72,6 +75,7 @@ nav ul li a:hover {
   padding: 20px;
   border-radius: 10px; /* Rende gli angoli arrotondati */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Aggiungi ombra per dare risalto */
+  z-index: 2; /* Imposta un z-index più alto per mantenerlo sopra gli altri blocchi */
 }
 
 .intro h1 {
@@ -100,6 +104,7 @@ nav ul li a:hover {
 .split-screen .left:hover, 
 .split-screen .right:hover {
   transform: scale(1.1); /* Ingrossa il blocco del 10% */
+  z-index: 3; /* Aumenta il z-index durante l'hover per fare in modo che si trovi sopra l'altro blocco */
 }
 
 /* Stile per titoli e testo nei blocchi */
@@ -123,3 +128,4 @@ p {
 .split-screen .right:hover p {
   transform: translateY(5px); /* Sposta il paragrafo verso il basso */
 }
+
