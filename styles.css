@@ -74,7 +74,7 @@ nav ul li a:hover {
 .intro {
   width: 300px;
   height: 300px;
-  background-color: #f4f4f4;
+  background:rgba(0,0,0,0.5)
   position: absolute;
   top: 50%;
   left: 50%;
@@ -93,7 +93,7 @@ nav ul li a:hover {
 }
 
 .intro h1 {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   color: #333;
   margin-bottom: 10px;
 }
