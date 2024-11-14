@@ -63,20 +63,25 @@ nav ul li a:hover {
 
 /* Sezione Introduttiva */
 .intro {
-  width: 300px;
-  height: 300px;
-  background-color: #f4f4f4; 
-  position: absolute; 
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%); 
+  width: 200px;
+  height: 200px;
+  background-color: #f4f4f4;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  padding: 20px;
-  border-radius: 10px; 
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-  z-index: 2; /* Il più alto, per garantirne la visibilità sopra i blocchi laterali */
+  padding: 10px; /* Riduci il padding se necessario */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  
+  /* Aggiungi Flexbox per centrare il contenuto */
+  display: flex;
+  flex-direction: column; /* Per allineare gli elementi in colonna (titolo e paragrafo) */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra orizzontalmente */
 }
-
 .intro h1 {
   font-size: 1.8rem;
   color: #333;
