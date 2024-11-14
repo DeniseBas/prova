@@ -27,7 +27,6 @@ nav ul li a {
   font-size: 16px;
   padding: 8px 16px;
   border-radius: 5px;
-  transition: background-color 0.3s;
 }
 
 nav ul li a:hover {
@@ -41,7 +40,7 @@ nav ul li a:hover {
   position: relative; /* Necessario per il posizionamento della sezione introduttiva */
 }
 
-/* Aggiungi z-index per i blocchi laterali */
+/* Senza transizioni, senza effetto hover su espansione */
 .split-screen .left, .split-screen .right {
   flex: 1; /* Occupa metà della larghezza ciascuno */
   padding: 20px;
@@ -49,7 +48,6 @@ nav ul li a:hover {
   justify-content: center;
   align-items: center;
   color: white;
-  transition: transform 0.3s ease-in-out; /* Transizione per l'espansione */
   position: relative; /* Imposta posizione relativa per gestire z-index */
   z-index: 1; /* Imposta un z-index inferiore rispetto alla sezione centrale */
 }
@@ -100,34 +98,26 @@ nav ul li a:hover {
   opacity: 0.8; /* Riduci opacità per effetto hover */
 }
 
-/* Modifica per evitare che i blocchi laterali coprano il blocco centrale */
+/* Rimuovere la transizione di ingrandimento per i blocchi laterali */
 .split-screen .left:hover,
 .split-screen .right:hover {
-  transform: scale(1.1); /* Ingrossa il blocco del 10% */
-  z-index: 3; /* Aumenta il z-index solo quando il blocco è ingrandito */
-  position: relative; /* Mantieni la posizione relativa per non interferire con il stacking */
-  /* Gestire il overflow per evitare che escano fuori dal container */
-  overflow: visible;
+  transform: none; /* Rimuove l'effetto di espansione */
+  z-index: 2; /* Mantiene il z-index invariato */
 }
 
 /* Stile per titoli e testo nei blocchi */
 h1 {
   font-size: 2.5rem;
-  transition: transform 0.3s ease-in-out;
 }
 
 p {
   font-size: 1.2rem;
-  transition: transform 0.3s ease-in-out;
 }
 
-/* Effetto sui testi per renderli più evidenti durante l'hover */
-.split-screen .left:hover h1,
-.split-screen .right:hover h1 {
-  transform: translateY(-10px); /* Sposta il titolo verso l'alto */
-}
-
-.split-screen .left:hover p,
-.split-screen .right:hover p {
-  transform: translateY(5px); /* Sposta il paragrafo verso il basso */
+/* Rimuovi la transizione del movimento del testo */
+.split-screen .left h1,
+.split-screen .right h1,
+.split-screen .left p,
+.split-screen .right p {
+  transform: none; /* Rimuove l'effetto di movimento */
 }
