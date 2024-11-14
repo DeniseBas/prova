@@ -47,24 +47,25 @@ nav ul li a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
   position: relative; /* Imposta posizione relativa per gestire z-index */
   background-color: #4CAF50; /* Colore verde per sinistra e blu per destra */
   z-index: 1; /* Mantieni un z-index inferiore rispetto alla sezione centrale */
 }
 
 .split-screen .left {
-  background-color: #4CAF50; /* Colore verde */
+  background-color: #F5F5F5; /* Colore White Smoke */
+  color: #000000;
 }
 
 .split-screen .right {
-  background-color: #2196F3; /* Colore blu */
+  background-color: #000000; /* Colore Nero */
+  color: #F5F5F5;
 }
 
 /* Sezione Introduttiva */
 .intro {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   background-color: #f4f4f4;
   position: absolute;
   top: 50%;
