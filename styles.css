@@ -57,6 +57,14 @@ nav ul li a:hover {
   color: #000000;
 }
 
+/* Stile per il testo specifico nel blocco sinistro */
+.split-screen .left h1,
+.split-screen .left p,
+.split-screen .left a {
+  color: #000000; /* Forza il colore nero per tutti i testi specifici */
+}
+
+
 .split-screen .right {
   background-color: #000000; /* Colore Nero */
   color: #F5F5F5;
