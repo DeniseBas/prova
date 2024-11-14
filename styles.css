@@ -100,11 +100,14 @@ nav ul li a:hover {
   opacity: 0.8; /* Riduci opacità per effetto hover */
 }
 
-/* Transizione per ingrandire i blocchi al passaggio del mouse */
-.split-screen .left:hover, 
+/* Modifica per evitare che i blocchi laterali coprano il blocco centrale */
+.split-screen .left:hover,
 .split-screen .right:hover {
   transform: scale(1.1); /* Ingrossa il blocco del 10% */
-  z-index: 3; /* Aumenta il z-index durante l'hover per fare in modo che si trovi sopra l'altro blocco */
+  z-index: 3; /* Aumenta il z-index solo quando il blocco è ingrandito */
+  position: relative; /* Mantieni la posizione relativa per non interferire con il stacking */
+  /* Gestire il overflow per evitare che escano fuori dal container */
+  overflow: visible;
 }
 
 /* Stile per titoli e testo nei blocchi */
@@ -128,4 +131,3 @@ p {
 .split-screen .right:hover p {
   transform: translateY(5px); /* Sposta il paragrafo verso il basso */
 }
-
