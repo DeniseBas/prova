@@ -1,85 +1,34 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Split Screen Design</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capitano Ulisse Digital Edition</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Container for Split Screen -->
-    <div class="split-container">
-        <!-- Left Side (Dynamic content) -->
-        <div class="left-side">
-            <div class="logo" id="logo">
-                <h1>Logo 1</h1>
-            </div>
-            <div class="content">
-                <h2>Welcome to the Left Side</h2>
-                <p>This side of the screen features some amazing content.</p>
-            </div>
-        </div>
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About the Project</a></li>
+    </ul>
+  </nav>
 
-        <!-- Divider -->
-        <div class="divider" id="divider"></div>
-
-        <!-- Right Side (Dynamic content) -->
-        <div class="right-side">
-            <div class="logo" id="logo-right">
-                <h1>Logo 2</h1>
-            </div>
-            <div class="content">
-                <h2>Welcome to the Right Side</h2>
-                <p>Here is where we display more information on the right.</p>
-            </div>
-        </div>
+  <!-- Split Screen con link -->
+  <section class="split-screen">
+    <div class="left">
+      <a href="pagina1.html">
+        <h1>Text</h1>
+        <p>Explore the texual variants of Capitano Ulisse</p>
+      </a>
     </div>
-
-    <!-- JavaScript in-line -->
-    <script>
-        // Get references to the divider and the sides
-        const divider = document.getElementById('divider');
-        const leftSide = document.querySelector('.left-side');
-        const rightSide = document.querySelector('.right-side');
-        const logo = document.getElementById('logo');
-        const logoRight = document.getElementById('logo-right');
-
-        let isResizing = false;
-
-        divider.addEventListener('mousedown', (e) => {
-            isResizing = true;
-            // Prevent the default dragging behavior
-            e.preventDefault();
-
-            // Add mousemove and mouseup event listeners
-            document.addEventListener('mousemove', handleMouseMove);
-            document.addEventListener('mouseup', () => {
-                isResizing = false;
-                document.removeEventListener('mousemove', handleMouseMove);
-            });
-        });
-
-        function handleMouseMove(e) {
-            if (isResizing) {
-                // Calculate the new width of the left side
-                const newLeftWidth = e.clientX;
-
-                // Ensure the width doesn't go below a minimum or exceed the window width
-                if (newLeftWidth > 100 && newLeftWidth < window.innerWidth - 100) {
-                    leftSide.style.width = `${newLeftWidth}px`;
-                    rightSide.style.width = `calc(100vw - ${newLeftWidth}px)`;
-
-                    // Change logo visibility based on side expanded
-                    if (newLeftWidth < window.innerWidth / 2) {
-                        logo.style.opacity = '1';
-                        logoRight.style.opacity = '0';
-                    } else {
-                        logo.style.opacity = '0';
-                        logoRight.style.opacity = '1';
-                    }
-                }
-            }
-        }
-    </script>
+    <div class="right">
+      <a href="pagina2.html">
+        <h1>Performance</h1>
+        <p>Explore the staging of Capitano Ulisse</p>
+      </a>
+    </div>
+  </section>
 </body>
 </html>
