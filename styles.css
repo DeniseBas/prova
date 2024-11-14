@@ -1,62 +1,98 @@
-/* Basic reset */
+/* Reset basic styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+/* Impostazioni della Navbar */
+nav {
+  background-color: #333;
+  padding: 10px 20px;
+  text-align: right;
 }
 
-/* Split Container */
-.split-container {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
+nav ul {
+  list-style: none;
 }
 
-/* Left Side */
-.left-side, .right-side {
-    flex: 1;
-    padding: 20px;
-    overflow: hidden;
-    transition: background-color 0.3s ease;
+nav ul li {
+  display: inline;
+  margin-left: 20px;
 }
 
-/* Background colors for each side */
-.left-side {
-    background-color: #3498db; /* Blue */
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-.right-side {
-    background-color: #2ecc71; /* Green */
+nav ul li a:hover {
+  background-color: #555;
 }
 
-/* Divider */
-.divider {
-    width: 5px;
-    background-color: #ccc;
-    cursor: ew-resize;
+/* Split Screen */
+.split-screen {
+  display: flex;
+  height: 100vh; /* Occupare l'intera altezza della finestra */
 }
 
-/* Logos */
-.logo {
-    margin-bottom: 50px;
-    transition: opacity 0.3s ease;
-    color: white;
+.split-screen .left, .split-screen .right {
+  flex: 1; /* Occupa metà della larghezza ciascuno */
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: transform 0.3s ease-in-out; /* Transizione per l'espansione */
 }
 
-.content h2, .content p {
-    color: white;
+.split-screen .left {
+  background-color: #4CAF50; /* Colore verde */
 }
 
-/* When divider is moved, change the logo opacity */
-#logo.right {
-    opacity: 0; /* Initially invisible */
+.split-screen .right {
+  background-color: #2196F3; /* Colore blu */
 }
 
-#logo-right {
-    opacity: 0; /* Initially invisible */
+/* Aggiungi stile per i link dentro i blocchi */
+.split-screen a {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+.split-screen a:hover {
+  opacity: 0.8; /* Riduci opacità per effetto hover */
+}
+
+/* Transizione per ingrandire i blocchi al passaggio del mouse */
+.split-screen .left:hover, 
+.split-screen .right:hover {
+  transform: scale(1.1); /* Ingrossa il blocco del 10% */
+}
+
+/* Stile per titoli e testo nei blocchi */
+h1 {
+  font-size: 2.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+p {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Effetto sui testi per renderli più evidenti durante l'hover */
+.split-screen .left:hover h1,
+.split-screen .right:hover h1 {
+  transform: translateY(-10px); /* Sposta il titolo verso l'alto */
+}
+
+.split-screen .left:hover p,
+.split-screen .right:hover p {
+  transform: translateY(5px); /* Sposta il paragrafo verso il basso */
 }
