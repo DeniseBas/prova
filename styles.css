@@ -1,0 +1,62 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Split Container */
+.split-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Left Side */
+.left-side, .right-side {
+    flex: 1;
+    padding: 20px;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+/* Background colors for each side */
+.left-side {
+    background-color: #3498db; /* Blue */
+}
+
+.right-side {
+    background-color: #2ecc71; /* Green */
+}
+
+/* Divider */
+.divider {
+    width: 5px;
+    background-color: #ccc;
+    cursor: ew-resize;
+}
+
+/* Logos */
+.logo {
+    margin-bottom: 50px;
+    transition: opacity 0.3s ease;
+    color: white;
+}
+
+.content h2, .content p {
+    color: white;
+}
+
+/* When divider is moved, change the logo opacity */
+#logo.right {
+    opacity: 0; /* Initially invisible */
+}
+
+#logo-right {
+    opacity: 0; /* Initially invisible */
+}
